@@ -221,6 +221,6 @@ open the `iosApp/iosApp.xcworkspace` file in Xcode and make changes there.
 
 ## Hooray :partying_face:
 
-Now you are ready to fly :airplane:, this project was configured, built and made with :heart: by [Ahmed Nassar](https://github.com/ranger163), for any questions, enhancements, new feature enquiries or bug fixes please check [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md) & [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md) and don't hesitate to share with me your thoughts :eyes:.
+Now you are ready to fly :airplane:, this project was configured, built and made with :heart: by [Ahmed Nassar](https://github.com/ranger163), for any questions, enhancements, new feature enquiries or bug fixes please head to [Issues Section](https://github.com/ranger163/kotlin-multiplatform-template/issues/new/choose) and don't hesitate to share with me your thoughts :eyes:.
 
 Happy coding :computer:.
