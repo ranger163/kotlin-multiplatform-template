@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+title: 'Your short but descriptive bug title'
+labels: '[feature],[enhancement]'
+assignees: 'ranger163'
 
 ---
 
