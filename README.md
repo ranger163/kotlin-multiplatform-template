@@ -221,6 +221,6 @@ open the `iosApp/iosApp.xcworkspace` file in Xcode and make changes there.
 
 ## Hooray :partying_face:
 
-Now you are ready to fly :airplane:, this project was configured and build with :heart: by [Ahmed Nassar](https://github.com/ranger163), for any questions or enquiries please don't hesitate to contact me :eyes:.
+Now you are ready to fly :airplane:, this project was configured, built and made with :heart: by [Ahmed Nassar](https://github.com/ranger163), for any questions or enquiries please don't hesitate to contact me :eyes:.
 
 Happy coding journey :computer:.
