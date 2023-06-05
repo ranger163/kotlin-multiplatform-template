@@ -1,9 +1,12 @@
-# This is a [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) application
+# This is a [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) application.
 
 > **Note**
 > The iOS part of Compose Multiplatform is in Alpha. It may change incompatibly and require manual migration in the
 > future.
 > If you have any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+
+> **PS**
+> This template is a fork from [Jetbrains' compose multiplatform template](https://github.com/JetBrains/compose-multiplatform-template#readme)
 
 ## Set up the environment
 
