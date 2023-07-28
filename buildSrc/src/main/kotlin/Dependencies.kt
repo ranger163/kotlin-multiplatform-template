@@ -27,6 +27,8 @@ class Dependencies {
         private const val mokoFlow =
             "dev.icerock.moko:mvvm-flow-compose:${Versions.mokoVersion}" // api mvvm-flow, binding extensions for Compose Multiplatfrom
 
+        const val kamelImageLoader = "media.kamel:kamel-image:${Versions.kamelImageLoaderVersion}"
+
         val ktor = arrayListOf<String>().apply {
             add(ktorCore)
             add(contentNegotiation)
@@ -44,7 +46,7 @@ class Dependencies {
             add(mokoFlow)
         }
 
-        val libs = ktor + kotlinX + koin + moko
+        val libs = ktor + kotlinX + koin + moko + kamelImageLoader
     }
 
 
@@ -74,18 +76,12 @@ class Dependencies {
         const val composeMaterialIcons =
             "androidx.compose.material:material-icons-extended:${Versions.composeVersion}"
 
-        const val coil = "io.coil-kt:coil-compose:${Versions.coilVersion}"
-
         val multiplatformLibs = arrayListOf<String>().apply {
             add(composeActivity)
             add(appcompat)
             add(coreKtx)
             add(composeMaterialIcons)
         }
-
-        val libs = arrayListOf<String>().apply {
-            add(coil)
-        } + multiplatformLibs
     }
 
     object IOS {

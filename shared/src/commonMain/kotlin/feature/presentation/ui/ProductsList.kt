@@ -7,7 +7,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,8 +29,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import common.component.LoadImage
 import common.component.RenderError
 import common.component.RenderLoading
 import feature.presentation.data.UiProduct
@@ -85,17 +86,12 @@ fun ProductItem(
             .clickable { onItemClicked() })
     {
         Column(modifier = modifier.fillMaxWidth()) {
-            Box(
-                modifier = modifier.height(150.dp).fillMaxWidth().background(Color.Gray)
-            ) {
-                Text(
-                    modifier = modifier.align(Alignment.Center),
-                    maxLines = 1,
-                    text = product.title,
-                    color = Color.White,
-                    style = MaterialTheme.typography.titleLarge
-                )
-            }
+            LoadImage(
+                modifier = modifier.height(150.dp).fillMaxWidth(),
+                imagePath = product.thumbnail,
+                contentDescription = "${product.title} thumbnail",
+                contentScale = ContentScale.FillBounds
+            )
 
             Column(modifier = modifier.fillMaxSize().padding(8.dp)) {
                 Row(
@@ -107,7 +103,8 @@ fun ProductItem(
                         maxLines = 1,
                         text = product.title,
                         color = MaterialTheme.colorScheme.onSurface,
-                        style = MaterialTheme.typography.titleMedium
+                        style = MaterialTheme.typography.titleMedium,
+                        overflow = TextOverflow.Ellipsis
                     )
                     Text(
                         maxLines = 1,
@@ -132,7 +129,9 @@ fun ProductItem(
                     ).clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
-                    ) { isCardExpanded = isCardExpanded.not() }.padding(vertical = 8.dp),
+                    ) {
+                        isCardExpanded = isCardExpanded.not()
+                    }.padding(vertical = 8.dp),
                     text = product.description,
                     color = MaterialTheme.colorScheme.onSurface,
                     style = MaterialTheme.typography.bodyMedium,
