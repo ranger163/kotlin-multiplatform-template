@@ -24,10 +24,9 @@ object Versions {
     const val coreKtx = "1.10.1"
 
     //Third Party
-    const val coilVersion = "2.4.0"
 
     // Multiplatform
-    const val composeVersion = "1.4.0"
+    const val composeVersion = "1.4.3"
     const val ktorVersion = "2.3.0"
     const val kotlinxCore = "1.7.1"
     const val kotlinxCoroutines = "1.6.4"
@@ -36,4 +35,5 @@ object Versions {
     const val koinAndroid = "3.4.0"
     const val koinAndroidCompose = "3.4.4"
     const val mokoVersion = "0.16.1"
+    const val kamelImageLoaderVersion="0.6.0"
 }

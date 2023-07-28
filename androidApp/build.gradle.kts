@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Android.libs)
+    implementation(Dependencies.Android.multiplatformLibs)
     with(Dependencies.Koin) {
         implementation(core)
         implementation(android)
