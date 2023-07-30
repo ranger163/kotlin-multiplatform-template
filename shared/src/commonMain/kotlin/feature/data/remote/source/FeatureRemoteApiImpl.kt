@@ -12,7 +12,7 @@ import org.koin.core.component.KoinComponent
 class FeatureRemoteApiImpl(private val client: HttpClient) : FeatureRemoteApi, KoinComponent {
     override suspend fun getProductsList(): ResponseResource<GetProductsResponseDto> = runCatching {
         val response =
-            client.get { performCall("products") }.body<GetProductsResponseDto>()
+            client.get { performCall(endpoint = "products") }.body<GetProductsResponseDto>()
         ResponseResource.success(response)
     }.getOrElse { error ->
         ResponseResource.error(error)
