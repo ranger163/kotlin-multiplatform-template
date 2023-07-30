@@ -56,6 +56,7 @@ fun ktorHttpClient(
             ignoreUnknownKeys = true
         })
     }
+
     install(ResponseObserver) {
         onResponse { response ->
             if (enableNetworkLogs)
@@ -64,19 +65,21 @@ fun ktorHttpClient(
     }
 
     install(DefaultRequest) {
-        header(HttpHeaders.ContentType, ContentType.Application.Json)
+        header(HttpHeaders.ContentType, ContentType.Application.Any)
     }
 }
 
-fun HttpRequestBuilder.performCall(path: String) {
-    url {
-        takeFrom(BASE_URL)
-        encodedPath = path
-        headers {
-            append(
-                HttpHeaders.Authorization, "tokenFromSession"
-            )
-        }
+/**
+ * @param baseUrl: passing a new baseUrl will override the default one, so you can
+ * use multiple baseUrls using same client.
+ * @param endpoint: pass your endpoint here to be able to perform your request.
+ */
+fun HttpRequestBuilder.performCall(endpoint: String, baseUrl: String = BASE_URL) = url {
+    takeFrom(baseUrl)
+    encodedPath = endpoint
+    headers {
+        append(
+            HttpHeaders.Authorization, "tokenFromSession"
+        )
     }
-
 }

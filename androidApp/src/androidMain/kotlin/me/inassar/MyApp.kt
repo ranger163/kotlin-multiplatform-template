@@ -1,8 +1,7 @@
 package me.inassar
 
 import android.app.Application
-import di.appModule
-import di.initKoin
+import di.initKoinForAndroid
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 
@@ -12,10 +11,14 @@ import org.koin.android.ext.koin.androidLogger
 class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        initKoin {
+        initKoin()
+    }
+
+    private fun initKoin() = initKoinForAndroid(
+        enableNetworkLogs = true, // Pass true/false depending on debug/release config
+        appDeclaration = {
             androidLogger()
             androidContext(this@MyApp)
-            modules(appModule(enableNetworkLogs = true))
         }
-    }
+    )
 }

@@ -7,7 +7,7 @@ import platformModule
 /**
  * Created by Ahmed Nassar on 5/27/23.
  */
-fun initKoin(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclaration = {}) =
+fun initKoinForAndroid(enableNetworkLogs: Boolean, appDeclaration: KoinAppDeclaration = {}) =
     startKoin {
         appDeclaration()
         modules(
@@ -20,6 +20,6 @@ fun initKoin(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclarat
         )
     }
 
-// called by iOS...etc
-fun initKoin(enableNetworkLogs: Boolean = false) =
-    initKoin(enableNetworkLogs = enableNetworkLogs) {}
+// called by iOS, desktop...etc
+fun initKoin(enableNetworkLogs: Boolean) =
+    initKoinForAndroid(enableNetworkLogs = enableNetworkLogs) {}
