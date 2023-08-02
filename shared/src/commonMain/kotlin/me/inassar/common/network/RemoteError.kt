@@ -3,6 +3,8 @@ package me.inassar.common.network
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
+import me.inassar.common.config.GeneralStrings
+import me.inassar.common.config.Locales
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
@@ -25,7 +27,7 @@ fun Throwable.toUserErrorMessage() = runCatching {
         }
 
         else -> {
-            Throwable("Unknown error has occurred.")
+            Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH))
         }
     }
-}.getOrDefault(Throwable("Unknown error has occurred."))
+}.getOrDefault(Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH)))

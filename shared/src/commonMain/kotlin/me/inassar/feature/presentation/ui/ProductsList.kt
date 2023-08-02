@@ -35,6 +35,8 @@ import androidx.compose.ui.unit.dp
 import me.inassar.common.component.LoadImage
 import me.inassar.common.component.RenderError
 import me.inassar.common.component.RenderLoading
+import me.inassar.common.config.GeneralStrings
+import me.inassar.common.config.Locales
 import me.inassar.feature.presentation.data.UiProduct
 import me.inassar.feature.presentation.data.UiProducts
 import me.inassar.feature.presentation.manipulator.FeatureState
@@ -89,7 +91,7 @@ fun ProductItem(
             LoadImage(
                 modifier = modifier.height(150.dp).fillMaxWidth(),
                 imagePath = product.thumbnail,
-                contentDescription = "${product.title} thumbnail",
+                contentDescription = "${product.title} ${GeneralStrings.THUMBNAIL.localize(locale = Locales.ENGLISH)}",
                 contentScale = ContentScale.FillBounds
             )
 
