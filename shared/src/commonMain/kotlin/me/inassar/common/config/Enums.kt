@@ -7,6 +7,6 @@ enum class Platform {
     IOS, ANDROID, DESKTOP
 }
 
-enum class Local(val value: String) {
-    ARABIC(ARABIC_LANGUAGE), ENGLISH(ENGLISH_LANGUAGE)
+enum class Locales(val value: String) {
+    DEFAULT(ENGLISH_LANGUAGE), ARABIC(ARABIC_LANGUAGE), ENGLISH(ENGLISH_LANGUAGE)
 }

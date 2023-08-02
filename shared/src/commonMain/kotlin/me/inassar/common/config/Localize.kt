@@ -13,19 +13,20 @@ interface Localize {
 
     /**
      * This is where the translation is happening depending on passed localization.
-     * @param local: is used to pass current localized language.
+     * @param locale: is used to pass current localized language.
      * @param args: is used to pass arguments to be added to the localized string resource.
      */
-    fun localize(local: Local, vararg args: Any): String {
+    fun localize(locale: Locales, vararg args: Any): String {
         val builder = StringBuilder().also { stringBuilder ->
             args.forEach { arg ->
                 stringBuilder.append("$arg ")
             }
         }
 
-        return when (Local.valueOf(local.name)) {
-            Local.ARABIC -> if (builder.isEmpty()) ar else "$ar $builder"
-            Local.ENGLISH -> if (builder.isEmpty()) en else "$en $builder"
+        return when (Locales.valueOf(locale.name)) {
+            Locales.ARABIC -> if (builder.isEmpty()) ar else "$ar $builder"
+            Locales.ENGLISH -> if (builder.isEmpty()) en else "$en $builder"
+            Locales.DEFAULT -> if (builder.isEmpty()) en else "$en $builder"
         }
     }
 }
