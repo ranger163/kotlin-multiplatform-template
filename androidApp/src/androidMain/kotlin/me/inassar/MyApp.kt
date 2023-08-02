@@ -1,7 +1,7 @@
 package me.inassar
 
 import android.app.Application
-import di.initKoinForAndroid
+import me.inassar.di.initKoinForAndroid
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 
