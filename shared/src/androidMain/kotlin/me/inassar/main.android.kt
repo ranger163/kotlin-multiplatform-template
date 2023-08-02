@@ -1,12 +1,6 @@
-import androidx.compose.runtime.Composable
-import me.inassar.common.config.Platform
-import io.ktor.client.engine.android.Android
-import org.koin.dsl.module
+package me.inassar
 
-actual fun getPlatformName(): Platform = Platform.ANDROID
-actual fun platformModule() = module {
-    single { Android.create() }
-}
+import androidx.compose.runtime.Composable
 
 @Composable
 fun MainView() = App()

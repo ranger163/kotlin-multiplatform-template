@@ -1,11 +1,6 @@
-import androidx.compose.ui.window.ComposeUIViewController
-import me.inassar.common.config.Platform
-import io.ktor.client.engine.darwin.Darwin
-import org.koin.dsl.module
+package me.inassar
 
-actual fun getPlatformName(): Platform = Platform.IOS
-actual fun platformModule() = module {
-    single { Darwin.create() }
-}
+import androidx.compose.ui.window.ComposeUIViewController
+
 
 fun MainViewController() = ComposeUIViewController { App() }

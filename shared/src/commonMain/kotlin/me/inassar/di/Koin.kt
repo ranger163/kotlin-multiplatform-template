@@ -2,7 +2,7 @@ package me.inassar.di
 
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
-import platformModule
+import me.inassar.platformModule
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
