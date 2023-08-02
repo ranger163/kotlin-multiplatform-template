@@ -27,7 +27,7 @@ fun Throwable.toUserErrorMessage() = runCatching {
         }
 
         else -> {
-            Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH))
+            Throwable(GeneralStrings.Network.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH))
         }
     }
-}.getOrDefault(Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH)))
+}.getOrDefault(Throwable(GeneralStrings.Network.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH)))

@@ -56,7 +56,7 @@ fun LoadImage(
                     modifier = Modifier.size(48.dp),
                     imageVector = Icons.Default.BrokenImage,
                     contentDescription =
-                    GeneralStrings.IMAGE_CONTENT_DESC_WITH_ERROR.localize(
+                    GeneralStrings.UI.IMAGE_CONTENT_DESC_WITH_ERROR.localize(
                         locale = Locales.ENGLISH,
                         exception
                     ),
