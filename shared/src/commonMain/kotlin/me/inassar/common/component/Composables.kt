@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import me.inassar.common.config.GeneralStrings
-import me.inassar.common.config.Local
+import me.inassar.common.config.Locales
 
 /**
  * Created by Ahmed Nassar on 7/28/23.
@@ -57,7 +57,7 @@ fun LoadImage(
                     imageVector = Icons.Default.BrokenImage,
                     contentDescription =
                     GeneralStrings.IMAGE_CONTENT_DESC_WITH_ERROR.localize(
-                        local = Local.ENGLISH,
+                        locale = Locales.ENGLISH,
                         exception
                     ),
                     alpha = 0.3f
