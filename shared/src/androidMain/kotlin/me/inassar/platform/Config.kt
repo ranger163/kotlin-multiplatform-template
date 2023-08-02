@@ -1,4 +1,4 @@
-package me.inassar
+package me.inassar.platform
 
 import io.ktor.client.engine.android.Android
 import me.inassar.common.config.Platform

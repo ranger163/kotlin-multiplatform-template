@@ -1,4 +1,4 @@
-package me.inassar
+package me.inassar.platform
 
 import me.inassar.common.config.Platform
 import org.koin.core.module.Module
