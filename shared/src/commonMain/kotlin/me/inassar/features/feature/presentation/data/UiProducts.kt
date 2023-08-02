@@ -1,4 +1,4 @@
-package me.inassar.feature.presentation.data
+package me.inassar.features.feature.presentation.data
 
 
 data class UiProducts(

@@ -1,11 +1,11 @@
-package me.inassar.feature.domain.mapper
+package me.inassar.features.feature.domain.mapper
 
 import me.inassar.common.config.DEFAULT_DOUBLE
 import me.inassar.common.config.DEFAULT_INT
 import me.inassar.common.config.DEFAULT_STRING
-import me.inassar.feature.data.remote.dto.getProducts.response.GetProductsResponseDto
-import me.inassar.feature.domain.model.DomainProduct
-import me.inassar.feature.domain.model.DomainProducts
+import me.inassar.features.feature.data.remote.dto.getProducts.response.GetProductsResponseDto
+import me.inassar.features.feature.domain.model.DomainProduct
+import me.inassar.features.feature.domain.model.DomainProducts
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

@@ -1,4 +1,4 @@
-package me.inassar.feature.data.remote.dto.getProducts.response
+package me.inassar.features.feature.data.remote.dto.getProducts.response
 
 
 import kotlinx.serialization.SerialName

@@ -1,4 +1,4 @@
-package me.inassar.feature.presentation.manipulator
+package me.inassar.features.feature.presentation.manipulator
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

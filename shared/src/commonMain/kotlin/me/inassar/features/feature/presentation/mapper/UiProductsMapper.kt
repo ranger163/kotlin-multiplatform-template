@@ -1,8 +1,8 @@
-package me.inassar.feature.presentation.mapper
+package me.inassar.features.feature.presentation.mapper
 
-import me.inassar.feature.domain.model.DomainProducts
-import me.inassar.feature.presentation.data.UiProduct
-import me.inassar.feature.presentation.data.UiProducts
+import me.inassar.features.feature.domain.model.DomainProducts
+import me.inassar.features.feature.presentation.data.UiProduct
+import me.inassar.features.feature.presentation.data.UiProducts
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

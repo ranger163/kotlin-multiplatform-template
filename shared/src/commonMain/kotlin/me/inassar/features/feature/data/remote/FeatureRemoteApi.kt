@@ -1,7 +1,7 @@
-package me.inassar.feature.data.remote
+package me.inassar.features.feature.data.remote
 
 import me.inassar.common.network.ResponseResource
-import me.inassar.feature.data.remote.dto.getProducts.response.GetProductsResponseDto
+import me.inassar.features.feature.data.remote.dto.getProducts.response.GetProductsResponseDto
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

@@ -1,4 +1,4 @@
-package me.inassar.feature.domain.model
+package me.inassar.features.feature.domain.model
 
 
 data class DomainProducts(

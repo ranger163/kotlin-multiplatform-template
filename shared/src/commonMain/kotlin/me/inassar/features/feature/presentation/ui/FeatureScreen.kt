@@ -1,12 +1,12 @@
-package me.inassar.feature.presentation.ui
+package me.inassar.features.feature.presentation.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
-import me.inassar.feature.presentation.manipulator.FeatureEvents
-import me.inassar.feature.presentation.manipulator.FeatureViewModel
+import me.inassar.features.feature.presentation.manipulator.FeatureEvents
+import me.inassar.features.feature.presentation.manipulator.FeatureViewModel
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

@@ -1,4 +1,4 @@
-package me.inassar.feature.presentation.ui
+package me.inassar.features.feature.presentation.ui
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
@@ -37,9 +37,9 @@ import me.inassar.common.component.RenderError
 import me.inassar.common.component.RenderLoading
 import me.inassar.common.config.GeneralStrings
 import me.inassar.common.config.Locales
-import me.inassar.feature.presentation.data.UiProduct
-import me.inassar.feature.presentation.data.UiProducts
-import me.inassar.feature.presentation.manipulator.FeatureState
+import me.inassar.features.feature.presentation.data.UiProduct
+import me.inassar.features.feature.presentation.data.UiProducts
+import me.inassar.features.feature.presentation.manipulator.FeatureState
 
 /**
  * Created by Ahmed Nassar on 5/27/23.

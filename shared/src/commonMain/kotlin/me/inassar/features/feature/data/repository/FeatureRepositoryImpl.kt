@@ -1,13 +1,13 @@
-package me.inassar.feature.data.repository
+package me.inassar.features.feature.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import me.inassar.common.network.ResponseResource
 import me.inassar.common.network.toUserErrorMessage
-import me.inassar.feature.data.remote.FeatureRemoteApi
-import me.inassar.feature.domain.mapper.toDomainProducts
-import me.inassar.feature.domain.model.DomainProducts
-import me.inassar.feature.domain.repository.FeatureRepository
+import me.inassar.features.feature.data.remote.FeatureRemoteApi
+import me.inassar.features.feature.domain.mapper.toDomainProducts
+import me.inassar.features.feature.domain.model.DomainProducts
+import me.inassar.features.feature.domain.repository.FeatureRepository
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 

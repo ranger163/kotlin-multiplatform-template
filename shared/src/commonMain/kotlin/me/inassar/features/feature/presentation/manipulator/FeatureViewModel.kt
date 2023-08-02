@@ -1,4 +1,4 @@
-package me.inassar.feature.presentation.manipulator
+package me.inassar.features.feature.presentation.manipulator
 
 import dev.icerock.moko.mvvm.flow.CStateFlow
 import dev.icerock.moko.mvvm.flow.cStateFlow
@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.inassar.common.network.ResponseResource
-import me.inassar.feature.domain.repository.FeatureRepository
-import me.inassar.feature.presentation.mapper.toUiProducts
+import me.inassar.features.feature.domain.repository.FeatureRepository
+import me.inassar.features.feature.presentation.mapper.toUiProducts
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
