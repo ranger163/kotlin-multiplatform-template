@@ -1,4 +1,7 @@
-package me.inassar.common.config
+package me.inassar.common.locale
+
+import me.inassar.common.config.Locales
+import me.inassar.platform.currentDeviceLanguage
 
 /**
  * Created by Ahmed Nassar on 8/2/23.
@@ -8,25 +11,29 @@ package me.inassar.common.config
  * Also you can pass args to append it to your localized string.
  */
 interface Localize {
-    val en: String
-    val ar: String
+    val supportedLanguages: SupportedLanguages
 
     /**
      * This is where the translation is happening depending on passed localization.
-     * @param locale: is used to pass current localized language.
      * @param args: is used to pass arguments to be added to the localized string resource.
      */
-    fun localize(locale: Locales, vararg args: Any): String {
+    fun localize(vararg args: Any): String {
         val builder = StringBuilder().also { stringBuilder ->
             args.forEach { arg ->
                 stringBuilder.append("$arg ")
             }
         }
 
-        return when (Locales.valueOf(locale.name)) {
-            Locales.ARABIC -> if (builder.isEmpty()) ar else "$ar $builder"
-            Locales.ENGLISH -> if (builder.isEmpty()) en else "$en $builder"
-            Locales.DEFAULT -> if (builder.isEmpty()) en else "$en $builder"
+        // TODO: later get language from app's setting instead of device language.
+        return when (currentDeviceLanguage) {
+            Locales.ARABIC.value -> if (builder.isEmpty()) supportedLanguages.ar
+            else "${supportedLanguages.ar} $builder"
+
+            Locales.ENGLISH.value -> if (builder.isEmpty()) supportedLanguages.en
+            else "${supportedLanguages.en} $builder"
+
+            else -> if (builder.isEmpty()) supportedLanguages.en
+            else "${supportedLanguages.en} $builder"
         }
     }
 }
