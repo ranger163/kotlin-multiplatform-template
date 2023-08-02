@@ -2,6 +2,7 @@ package me.inassar.platform
 
 import io.ktor.client.engine.darwin.Darwin
 import me.inassar.common.config.Platform
+import org.koin.core.module.Module
 import org.koin.dsl.module
 import platform.Foundation.NSLocale
 import platform.Foundation.preferredLanguages
@@ -13,7 +14,8 @@ import platform.Foundation.preferredLanguages
 actual val currentDeviceLanguage: String
     get() = NSLocale.preferredLanguages.first().toString().substring(0..1)
 
-actual fun getPlatformName(): Platform = Platform.IOS
-actual fun platformNetworkEngineModule() = module {
-    single { Darwin.create() }
-}
+actual val currentPlatform: Platform
+    get() = Platform.IOS
+
+actual val platformNetworkEngineModule: Module
+    get() = module { single { Darwin.create() } }

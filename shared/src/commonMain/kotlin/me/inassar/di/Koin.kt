@@ -12,7 +12,7 @@ fun initKoinForAndroid(enableNetworkLogs: Boolean, appDeclaration: KoinAppDeclar
         appDeclaration()
         modules(
             appModule(enableNetworkLogs = enableNetworkLogs),
-            platformNetworkEngineModule(),
+            platformNetworkEngineModule,
             remoteModule,
             cacheModule,
             repositoryModule,
