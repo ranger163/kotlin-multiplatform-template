@@ -9,6 +9,6 @@ import org.koin.dsl.module
  */
 
 actual fun getPlatformName(): Platform = Platform.IOS
-actual fun platformModule() = module {
+actual fun platformNetworkEngineModule() = module {
     single { Darwin.create() }
 }

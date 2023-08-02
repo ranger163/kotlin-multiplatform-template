@@ -2,7 +2,7 @@ package me.inassar.di
 
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
-import me.inassar.platformModule
+import me.inassar.platformNetworkEngineModule
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
@@ -12,7 +12,7 @@ fun initKoinForAndroid(enableNetworkLogs: Boolean, appDeclaration: KoinAppDeclar
         appDeclaration()
         modules(
             appModule(enableNetworkLogs = enableNetworkLogs),
-            platformModule(),
+            platformNetworkEngineModule(),
             remoteModule,
             cacheModule,
             repositoryModule,
