@@ -8,5 +8,5 @@ enum class Platform {
 }
 
 enum class Locales(val value: String) {
-    DEFAULT(ENGLISH_LANGUAGE), ARABIC(ARABIC_LANGUAGE), ENGLISH(ENGLISH_LANGUAGE)
+    ARABIC(ARABIC_LANGUAGE), ENGLISH(ENGLISH_LANGUAGE)
 }

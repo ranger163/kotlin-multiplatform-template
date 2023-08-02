@@ -16,8 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
-import me.inassar.common.config.GeneralStrings
-import me.inassar.common.config.Locales
+import me.inassar.common.locale.GeneralStrings
 
 /**
  * Created by Ahmed Nassar on 7/28/23.
@@ -56,10 +55,7 @@ fun LoadImage(
                     modifier = Modifier.size(48.dp),
                     imageVector = Icons.Default.BrokenImage,
                     contentDescription =
-                    GeneralStrings.IMAGE_CONTENT_DESC_WITH_ERROR.localize(
-                        locale = Locales.ENGLISH,
-                        exception
-                    ),
+                    GeneralStrings.UI.IMAGE_CONTENT_DESC_WITH_ERROR.localize(exception),
                     alpha = 0.3f
                 )
             }

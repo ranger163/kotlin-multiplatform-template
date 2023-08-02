@@ -3,8 +3,7 @@ package me.inassar.common.network
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
-import me.inassar.common.config.GeneralStrings
-import me.inassar.common.config.Locales
+import me.inassar.common.locale.GeneralStrings
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
@@ -27,7 +26,7 @@ fun Throwable.toUserErrorMessage() = runCatching {
         }
 
         else -> {
-            Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH))
+            Throwable(GeneralStrings.Network.NETWORK_UNKNOWN_ERROR.localize())
         }
     }
-}.getOrDefault(Throwable(GeneralStrings.NETWORK_UNKNOWN_ERROR.localize(locale = Locales.ENGLISH)))
+}.getOrDefault(Throwable(GeneralStrings.Network.NETWORK_UNKNOWN_ERROR.localize()))

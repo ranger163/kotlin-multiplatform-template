@@ -1,7 +1,7 @@
 package me.inassar.di
 
-import me.inassar.feature.data.remote.FeatureRemoteApi
-import me.inassar.feature.data.remote.source.FeatureRemoteApiImpl
+import me.inassar.features.feature.data.remote.FeatureRemoteApi
+import me.inassar.features.feature.data.remote.source.FeatureRemoteApiImpl
 import org.koin.dsl.module
 
 /**
