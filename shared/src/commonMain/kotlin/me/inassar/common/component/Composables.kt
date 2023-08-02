@@ -16,6 +16,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
+import me.inassar.common.config.GeneralStrings
+import me.inassar.common.config.Local
 
 /**
  * Created by Ahmed Nassar on 7/28/23.
@@ -53,7 +55,11 @@ fun LoadImage(
                 Image(
                     modifier = Modifier.size(48.dp),
                     imageVector = Icons.Default.BrokenImage,
-                    contentDescription = "Default image placeholder with error $exception",
+                    contentDescription =
+                    GeneralStrings.IMAGE_CONTENT_DESC_WITH_ERROR.localize(
+                        local = Local.ENGLISH,
+                        exception
+                    ),
                     alpha = 0.3f
                 )
             }
