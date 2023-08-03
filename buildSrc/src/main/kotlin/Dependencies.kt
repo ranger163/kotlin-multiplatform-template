@@ -1,3 +1,5 @@
+import Dependencies.ThirdParty.kamelImageLoader
+
 /**
  * Created by Ahmed Nassar on 5/22/23.
  */
@@ -19,16 +21,6 @@ class Dependencies {
         private const val kotlinDateTime =
             "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDateTime}"
 
-        const val koin = "io.insert-koin:koin-core:${Versions.koinVersion}"
-        const val koinAndroid = "io.insert-koin:koin-androidx-compose${Versions.koinVersion}"
-
-        private const val mokoMvvm =
-            "dev.icerock.moko:mvvm-compose:${Versions.mokoVersion}" // api mvvm-core, getViewModel for Compose Multiplatfrom
-        private const val mokoFlow =
-            "dev.icerock.moko:mvvm-flow-compose:${Versions.mokoVersion}" // api mvvm-flow, binding extensions for Compose Multiplatfrom
-
-        const val kamelImageLoader = "media.kamel:kamel-image:${Versions.kamelImageLoaderVersion}"
-
         val ktor = arrayListOf<String>().apply {
             add(ktorCore)
             add(contentNegotiation)
@@ -42,20 +34,11 @@ class Dependencies {
         }
 
         val moko = arrayListOf<String>().apply {
-            add(mokoMvvm)
-            add(mokoFlow)
+            add(ThirdParty.mokoMvvm)
+            add(ThirdParty.mokoFlow)
         }
 
-        val libs = ktor + kotlinX + koin + moko + kamelImageLoader
-    }
-
-
-    object Koin {
-        const val core = "io.insert-koin:koin-core:${Versions.koinVersion}"
-        const val test = "io.insert-koin:koin-test:${Versions.koinVersion}"
-        const val testJUnit4 = "io.insert-koin:koin-test-junit4:${Versions.koinVersion}"
-        const val android = "io.insert-koin:koin-android:${Versions.koinAndroid}"
-        const val compose = "io.insert-koin:koin-androidx-compose:${Versions.koinAndroidCompose}"
+        val libs = ktor + kotlinX + ThirdParty.koinCore + moko + kamelImageLoader
     }
 
     object Android {
@@ -65,22 +48,25 @@ class Dependencies {
         const val composeActivity =
             "androidx.activity:activity-compose:${Versions.activityCompose}"
         private const val runtime =
-            "org.jetbrains.compose.runtime:runtime:${Versions.composeVersion}"
+            "org.jetbrains.compose.runtime:runtime:${Versions.composeMultiplatformVersion}"
 
-        const val composeUI = "androidx.compose.ui:ui:${Versions.composeVersion}"
-        const val composeUtil = "androidx.compose.ui:ui-util:${Versions.composeVersion}"
-        val composeMaterial = "androidx.compose.material:${Versions.composeVersion}"
-        const val composeMaterial3 = "androidx.compose.material3:${Versions.composeVersion}"
+        const val composeUI = "androidx.compose.ui:ui:${Versions.composeMultiplatformVersion}"
+        const val composeUtil =
+            "androidx.compose.ui:ui-util:${Versions.composeMultiplatformVersion}"
         const val composeTooling =
-            "androidx.compose.ui:ui-tooling-preview:${Versions.composeVersion}"
+            "androidx.compose.ui:ui-tooling-preview:${Versions.composeMultiplatformVersion}"
         const val composeMaterialIcons =
-            "androidx.compose.material:material-icons-extended:${Versions.composeVersion}"
+            "androidx.compose.material:material-icons-extended:${Versions.composeMultiplatformVersion}"
 
-        val multiplatformLibs = arrayListOf<String>().apply {
+        val libs = arrayListOf<String>().apply {
             add(composeActivity)
             add(appcompat)
             add(coreKtx)
             add(composeMaterialIcons)
+            add(runtime)
+            add(composeUI)
+            add(composeUtil)
+            add(composeTooling)
         }
     }
 
@@ -94,5 +80,17 @@ class Dependencies {
 
     object ThirdParty {
 
+        const val koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}"
+        const val test = "io.insert-koin:koin-test:${Versions.koinVersion}"
+        const val testJUnit4 = "io.insert-koin:koin-test-junit4:${Versions.koinVersion}"
+        const val android = "io.insert-koin:koin-android:${Versions.koinVersion}"
+        const val compose = "io.insert-koin:koin-androidx-compose:${Versions.koinAndroidXCompose}"
+
+        const val mokoMvvm =
+            "dev.icerock.moko:mvvm-compose:${Versions.mokoVersion}" // api mvvm-core, getViewModel for Compose Multiplatfrom
+        const val mokoFlow =
+            "dev.icerock.moko:mvvm-flow-compose:${Versions.mokoVersion}" // api mvvm-flow, binding extensions for Compose Multiplatfrom
+
+        const val kamelImageLoader = "media.kamel:kamel-image:${Versions.kamelImageLoaderVersion}"
     }
 }

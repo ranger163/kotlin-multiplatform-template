@@ -7,7 +7,7 @@ plugins {
 }
 
 kotlin {
-    android()
+    androidTarget()
 
     jvm("desktop")
 
@@ -37,8 +37,6 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.material3)
                 implementation(compose.materialIconsExtended)
-                @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
-                implementation(compose.components.resources)
 
                 Dependencies.Multiplatform.libs.forEach {
                     api(it)
@@ -47,7 +45,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                Dependencies.Android.multiplatformLibs.forEach {
+                Dependencies.Android.libs.forEach {
                     api(it)
                 }
                 implementation(Dependencies.Multiplatform.clientAndroid)
@@ -84,11 +82,16 @@ android {
 
     defaultConfig {
         minSdk = Versions.minSdk
-        targetSdk = Versions.targetSdk
     }
     compileOptions {
         sourceCompatibility = Versions.javaVersion
         targetCompatibility = Versions.javaVersion
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
     kotlin {
         jvmToolchain(Versions.jdkVersion)
