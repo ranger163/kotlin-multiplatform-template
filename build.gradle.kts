@@ -5,7 +5,7 @@ plugins {
 
     id("com.android.application") version Versions.agpVersion apply false
     id("com.android.library") version Versions.agpVersion apply false
-    id("org.jetbrains.compose") version Versions.composeVersion apply false
+    id("org.jetbrains.compose") version Versions.composeMultiplatformVersion apply false
 }
 
 tasks.register<Delete>("clean").configure {

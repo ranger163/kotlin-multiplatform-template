@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    android()
+    androidTarget()
     sourceSets {
         val androidMain by getting {
             dependencies {
@@ -32,15 +32,20 @@ android {
         sourceCompatibility = Versions.javaVersion
         targetCompatibility = Versions.javaVersion
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
+    }
     kotlin {
         jvmToolchain(Versions.jdkVersion)
     }
 }
 
 dependencies {
-    implementation(Dependencies.Android.multiplatformLibs)
-    with(Dependencies.Koin) {
-        implementation(core)
+    with(Dependencies.ThirdParty) {
+        implementation(koinCore)
         implementation(android)
         implementation(compose)
     }
