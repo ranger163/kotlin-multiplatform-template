@@ -1,4 +1,4 @@
-package me.inassar.common.component
+package me.inassar.common.composable
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons

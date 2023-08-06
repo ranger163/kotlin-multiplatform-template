@@ -22,8 +22,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
-import me.inassar.common.component.LoadImage
-import me.inassar.common.component.RatingBar
+import me.inassar.common.composable.LoadImage
+import me.inassar.common.composable.RatingBar
 import me.inassar.features.feature.presentation.data.UiProduct
 
 /**

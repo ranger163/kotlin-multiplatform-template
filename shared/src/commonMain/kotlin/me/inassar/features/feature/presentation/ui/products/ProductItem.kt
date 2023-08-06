@@ -29,7 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import me.inassar.common.component.LoadImage
+import me.inassar.common.composable.LoadImage
 import me.inassar.features.feature.presentation.data.UiProduct
 
 /**

@@ -19,8 +19,8 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
-import me.inassar.common.component.RenderError
-import me.inassar.common.component.RenderLoading
+import me.inassar.common.composable.RenderError
+import me.inassar.common.composable.RenderLoading
 import me.inassar.features.feature.presentation.data.FeatureStrings
 import me.inassar.features.feature.presentation.data.UiProducts
 import me.inassar.features.feature.presentation.manipulator.FeatureEvents
