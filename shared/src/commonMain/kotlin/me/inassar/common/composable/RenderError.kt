@@ -1,4 +1,4 @@
-package me.inassar.common.component
+package me.inassar.common.composable
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

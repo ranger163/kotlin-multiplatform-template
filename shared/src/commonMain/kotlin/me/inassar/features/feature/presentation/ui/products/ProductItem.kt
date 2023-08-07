@@ -1,4 +1,4 @@
-package me.inassar.features.feature.presentation.ui
+package me.inassar.features.feature.presentation.ui.products
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
@@ -14,9 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Card
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
@@ -32,45 +29,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import me.inassar.common.component.LoadImage
-import me.inassar.common.component.RenderError
-import me.inassar.common.component.RenderLoading
+import me.inassar.common.composable.LoadImage
 import me.inassar.features.feature.presentation.data.UiProduct
-import me.inassar.features.feature.presentation.data.UiProducts
-import me.inassar.features.feature.presentation.manipulator.FeatureState
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
  */
-@Composable
-fun ProductsList(state: FeatureState) {
-    Column(
-        modifier = Modifier.fillMaxSize()
-            .padding(top = 16.dp, start = 16.dp, end = 16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        when (state) {
-            FeatureState.Loading -> RenderLoading()
-            is FeatureState.Error -> RenderError(message = state.errorMessage)
-            is FeatureState.Success -> RenderData(state.uiProducts)
-        }
-    }
-}
-
-@Composable
-fun RenderData(data: UiProducts) {
-    LazyColumn(
-        state = rememberLazyListState()
-    ) {
-        items(items = data.products, key = { it.hashCode() }) { product ->
-            ProductItem(product = product, onItemClicked = {
-                println("Product card has been clicked!")
-            })
-        }
-    }
-}
-
 
 @Composable
 fun ProductItem(
