@@ -33,12 +33,7 @@ class Dependencies {
             add(kotlinDateTime)
         }
 
-        val moko = arrayListOf<String>().apply {
-            add(ThirdParty.mokoMvvm)
-            add(ThirdParty.mokoFlow)
-        }
-
-        val libs = ktor + kotlinX + ThirdParty.koinCore + moko + kamelImageLoader
+        val libs = ktor + kotlinX + ThirdParty.thirdPartyLibs
     }
 
     object Android {
@@ -79,7 +74,6 @@ class Dependencies {
     }
 
     object ThirdParty {
-
         const val koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}"
         const val test = "io.insert-koin:koin-test:${Versions.koinVersion}"
         const val testJUnit4 = "io.insert-koin:koin-test-junit4:${Versions.koinVersion}"
@@ -92,5 +86,21 @@ class Dependencies {
             "dev.icerock.moko:mvvm-flow-compose:${Versions.mokoVersion}" // api mvvm-flow, binding extensions for Compose Multiplatfrom
 
         const val kamelImageLoader = "media.kamel:kamel-image:${Versions.kamelImageLoaderVersion}"
+
+
+        // Navigator
+        private const val voyagerNavigator =
+            "cafe.adriel.voyager:voyager-navigator:${Versions.voyagerVersion}"
+        private const val voyagerTransitions =
+            "cafe.adriel.voyager:voyager-transitions:${Versions.voyagerVersion}"
+
+        val thirdPartyLibs = arrayListOf<String>(
+            koinCore,
+            mokoMvvm,
+            mokoFlow,
+            kamelImageLoader,
+            voyagerNavigator,
+            voyagerTransitions
+        )
     }
 }

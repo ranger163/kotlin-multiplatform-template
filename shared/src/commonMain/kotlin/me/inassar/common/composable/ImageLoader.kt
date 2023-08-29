@@ -1,4 +1,4 @@
-package me.inassar.common.component
+package me.inassar.common.composable
 
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
