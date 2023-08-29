@@ -4,6 +4,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import cafe.adriel.voyager.navigator.CurrentScreen
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.transitions.FadeTransition
 import cafe.adriel.voyager.transitions.ScaleTransition
@@ -26,11 +27,12 @@ fun App() {
                     canPop = navigator.canPop,
                     onNavigationBackClick = { navigator.pop() })
             }) {
-                when (currentPlatform) {
-                    Platform.IOS -> SlideTransition(navigator)
-                    Platform.ANDROID -> FadeTransition(navigator)
-                    Platform.DESKTOP -> ScaleTransition(navigator)
-                }
+                CurrentScreen()
+//                when (currentPlatform) {
+//                    Platform.IOS -> SlideTransition(navigator)
+//                    Platform.ANDROID -> FadeTransition(navigator)
+//                    Platform.DESKTOP -> ScaleTransition(navigator)
+//                }
             }
         }
     }
