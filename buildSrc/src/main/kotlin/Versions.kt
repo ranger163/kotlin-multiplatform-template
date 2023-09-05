@@ -27,7 +27,7 @@ object Versions {
     //Third Party
     const val mokoVersion = "0.16.1"
     const val kamelImageLoaderVersion = "0.6.0"
-    const val voyagerVersion = "1.0.0-rc05"
+    const val voyagerVersion = "1.0.0-rc07"
     const val calfAdaptiveUiVersion="0.1.1"
 
     // Multiplatform

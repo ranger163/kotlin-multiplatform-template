@@ -26,8 +26,6 @@ kotlin {
             isStatic = true
             export(Dependencies.ThirdParty.calfAdaptiveUi)
         }
-        extraSpecAttributes["resources"] =
-            "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
 
     sourceSets {

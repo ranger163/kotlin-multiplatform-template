@@ -1,6 +1,5 @@
 package me.inassar
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -14,7 +13,6 @@ import me.inassar.common.config.Platform
 import me.inassar.features.feature.presentation.ui.products.ProductsScreen
 import me.inassar.platform.currentPlatform
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun App() {
     MaterialTheme {
