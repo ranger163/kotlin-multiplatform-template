@@ -24,6 +24,7 @@ kotlin {
         framework {
             baseName = "shared"
             isStatic = true
+            export(Dependencies.ThirdParty.calfAdaptiveUi)
         }
     }
 

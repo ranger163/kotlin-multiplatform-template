@@ -87,12 +87,13 @@ class Dependencies {
 
         const val kamelImageLoader = "media.kamel:kamel-image:${Versions.kamelImageLoaderVersion}"
 
-
         // Navigator
         private const val voyagerNavigator =
             "cafe.adriel.voyager:voyager-navigator:${Versions.voyagerVersion}"
         private const val voyagerTransitions =
             "cafe.adriel.voyager:voyager-transitions:${Versions.voyagerVersion}"
+
+        const val calfAdaptiveUi = "com.mohamedrejeb.calf:calf-ui:${Versions.calfAdaptiveUiVersion}"
 
         val thirdPartyLibs = arrayListOf<String>(
             koinCore,
@@ -100,7 +101,8 @@ class Dependencies {
             mokoFlow,
             kamelImageLoader,
             voyagerNavigator,
-            voyagerTransitions
+            voyagerTransitions,
+            calfAdaptiveUi
         )
     }
 }

@@ -28,9 +28,10 @@ object Versions {
     const val mokoVersion = "0.16.1"
     const val kamelImageLoaderVersion = "0.6.0"
     const val voyagerVersion = "1.0.0-rc07"
+    const val calfAdaptiveUiVersion="0.1.1"
 
     // Multiplatform
-    const val composeMultiplatformVersion = "1.5.0"
+    const val composeMultiplatformVersion = "1.5.0-beta01"
     const val ktorVersion = "2.3.3"
     const val kotlinxCoroutines = "1.7.3"
     const val kotlinxDateTime = "0.4.0"
