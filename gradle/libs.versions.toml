@@ -1,0 +1,117 @@
+# Define the dependency versions
+[versions]
+
+#Plugins
+agpVersionPlugin = "8.1.1"
+
+#Global
+kotlinVersion = "1.9.10"
+applicationId = "me.inassar"
+
+#Android
+compileSdk = "34"
+targetSdk = "34"
+minSdk = "24"
+versionCode = "1"
+versionName = "1.0.0"
+composeCompiler = "1.5.3"
+activityCompose = "1.7.2"
+appcompat = "1.6.1"
+coreKtx = "1.12.0"
+
+#Third Party
+mokoVersion = "0.16.1"
+kamelImageLoaderVersion = "0.6.0"
+voyagerVersion = "1.0.0-rc07"
+calfAdaptiveUiVersion = "0.1.1"
+
+#Multiplatform
+composeMultiplatformVersion = "1.5.1"
+ktorVersion = "2.3.3"
+kotlinxCoroutines = "1.7.3"
+kotlinxDateTime = "0.4.0"
+koinVersion = "3.4.3"
+koinAndroidXCompose = "3.4.6"
+
+# Define the libraries
+[libraries]
+
+#Multiplatform
+ktorCore = { module = "io.ktor:ktor-client-core", version.ref = "ktorVersion" }
+contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
+ktorLogging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorVersion" }
+ktorSerializationJson = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
+ktorClientCio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorVersion" }
+ktorClientAndroid = { module = "io.ktor:ktor-client-android", version.ref = "ktorVersion" }
+ktorClientDarwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorVersion" }
+
+coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinDateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTime" }
+
+#Android
+coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+composeActivity = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatformVersion" }
+
+composeUI = { module = "androidx.compose.ui:ui", version.ref = "composeMultiplatformVersion" }
+composeUtil = { module = "androidx.compose.ui:ui-util", version.ref = "composeMultiplatformVersion" }
+composeTooling = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatformVersion" }
+composeMaterialIcons = { module = "androidx.compose.material:material-icons-extended", version.ref = "composeMultiplatformVersion" }
+
+#ThirdParty
+koinCore = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
+koinTest = { module = "io.insert-koin:koin-test", version.ref = "koinVersion" }
+koinTestJUnit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinVersion" }
+koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
+koinCompose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinAndroidXCompose" }
+
+# api mvvm-core, getViewModel for Compose Multiplatfrom
+mokoMvvm = { module = "dev.icerock.moko:mvvm-compose", version.ref = "mokoVersion" }
+# api mvvm-flow, binding extensions for Compose Multiplatfrom
+mokoFlow = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "mokoVersion" }
+
+kamelImageLoader = { module = "media.kamel:kamel-image", version.ref = "kamelImageLoaderVersion" }
+
+voyagerNavigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyagerVersion" }
+voyagerTransitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyagerVersion" }
+
+calfAdaptiveUi = { module = "com.mohamedrejeb.calf:calf-ui", version.ref = "calfAdaptiveUiVersion" }
+
+# Define bundles/groups of libraries
+[bundles]
+multiplatformLibs = [
+    "ktorCore",
+    "contentNegotiation",
+    "ktorLogging",
+    "ktorSerializationJson",
+    "coroutinesCore",
+    "kotlinDateTime",
+    "koinCore",
+    "mokoMvvm",
+    "mokoFlow",
+    "kamelImageLoader",
+    "voyagerNavigator",
+    "voyagerTransitions",
+    "calfAdaptiveUi",
+]
+androidLibs = [
+    "composeActivity",
+    "appcompat",
+    "coreKtx",
+    "composeMaterialIcons",
+    "runtime",
+    "composeUI",
+    "composeUtil",
+    "composeTooling"
+]
+
+[plugins]
+android_application = { id = "com.android.application", version.ref = "agpVersionPlugin" }
+android_library = { id = "com.android.library", version.ref = "agpVersionPlugin" }
+jetbrains_compose = { id = "org.jetbrains.compose", version.ref = "composeMultiplatformVersion" }
+jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinVersion" }
+android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
+native_cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlinVersion" }
+plugin_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }

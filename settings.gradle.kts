@@ -4,6 +4,8 @@ include(":androidApp")
 include(":shared")
 include(":desktopApp")
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()

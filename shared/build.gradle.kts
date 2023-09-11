@@ -1,9 +1,10 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
-    id("org.jetbrains.compose")
-    kotlin("plugin.serialization") version Versions.kotlinVersion
+    alias(libs.plugins.multiplatform)
+    id(libs.plugins.native.cocoapods.get().pluginId)
+    alias(libs.plugins.android.library)
+    alias (libs.plugins.jetbrains.compose)
+    alias (libs.plugins.plugin.serialization)
 }
 
 kotlin {
@@ -24,7 +25,7 @@ kotlin {
         framework {
             baseName = "shared"
             isStatic = true
-            export(Dependencies.ThirdParty.calfAdaptiveUi)
+            export(libs.calfAdaptiveUi)
         }
     }
 
@@ -38,17 +39,13 @@ kotlin {
                 implementation(compose.animation)
                 implementation(compose.materialIconsExtended)
 
-                Dependencies.Multiplatform.libs.forEach {
-                    api(it)
-                }
+                api(libs.bundles.multiplatformLibs)
             }
         }
         val androidMain by getting {
             dependencies {
-                Dependencies.Android.libs.forEach {
-                    api(it)
-                }
-                implementation(Dependencies.Multiplatform.clientAndroid)
+                api(libs.bundles.androidLibs)
+                implementation(libs.ktorClientAndroid)
             }
         }
         val iosX64Main by getting
@@ -60,20 +57,20 @@ kotlin {
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
-                implementation(Dependencies.Multiplatform.clientDarwin)
+                implementation(libs.ktorClientDarwin)
             }
         }
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.common)
-                implementation(Dependencies.Multiplatform.clientCio)
+                implementation(libs.ktorClientCio)
             }
         }
     }
 }
 
 android {
-    compileSdk = Versions.compileSdk
+    compileSdk = libs.versions.compileSdk.get().toInt()
     namespace = "me.inassar.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -81,19 +78,19 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        minSdk = Versions.minSdk
+        minSdk = libs.versions.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = Versions.javaVersion
-        targetCompatibility = Versions.javaVersion
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.composeCompiler
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     kotlin {
-        jvmToolchain(Versions.jdkVersion)
+        jvmToolchain(17)
     }
 }

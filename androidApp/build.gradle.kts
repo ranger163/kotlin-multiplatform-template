@@ -1,7 +1,8 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("multiplatform")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.multiplatform)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 kotlin {
@@ -9,44 +10,42 @@ kotlin {
     sourceSets {
         val androidMain by getting {
             dependencies {
-                implementation(project(":shared"))
+                implementation(rootProject.projects.shared)
             }
         }
     }
 }
 
 android {
-    compileSdk = Versions.compileSdk
-    namespace = Versions.applicationId
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = libs.versions.applicationId.get()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = Versions.applicationId
-        minSdk = Versions.minSdk
-        targetSdk = Versions.targetSdk
-        versionCode = Versions.VersionCode
-        versionName = Versions.VersionName
+        applicationId = libs.versions.applicationId.get()
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
     }
     compileOptions {
-        sourceCompatibility = Versions.javaVersion
-        targetCompatibility = Versions.javaVersion
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.composeCompiler
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     kotlin {
-        jvmToolchain(Versions.jdkVersion)
+        jvmToolchain(17)
     }
 }
 
 dependencies {
-    with(Dependencies.ThirdParty) {
-        implementation(koinCore)
-        implementation(android)
-        implementation(compose)
-    }
+    implementation(libs.koinCore)
+    implementation(libs.koinAndroid)
+    implementation(libs.koinCompose)
 }
