@@ -1,11 +1,11 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("jvm") version Versions.kotlinVersion apply false
-    kotlin("multiplatform") version Versions.kotlinVersion apply false
-    kotlin("android") version Versions.kotlinVersion apply false
-
-    id("com.android.application") version Versions.agpVersion apply false
-    id("com.android.library") version Versions.agpVersion apply false
-    id("org.jetbrains.compose") version Versions.composeMultiplatformVersion apply false
+    alias(libs.plugins.jvm) apply false
+    alias(libs.plugins.multiplatform) apply false
+    alias(libs.plugins.android) apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.jetbrains.compose) apply false
 }
 
 tasks.register<Delete>("clean").configure {
