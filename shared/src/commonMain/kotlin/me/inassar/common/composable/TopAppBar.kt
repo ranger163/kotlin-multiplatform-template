@@ -59,7 +59,7 @@ fun TopBar(
                     textAlign = if (isAndroid) TextAlign.Start else TextAlign.Center
                 )
             },
-            colors = TopAppBarDefaults.smallTopAppBarColors(
+            colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = backgroundColor,
                 actionIconContentColor = contentColor,
                 navigationIconContentColor = contentColor,
