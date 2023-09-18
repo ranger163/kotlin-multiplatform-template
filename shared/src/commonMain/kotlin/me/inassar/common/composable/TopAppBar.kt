@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Surface
+import androidx.compose.material3.Surface
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBackIosNew
@@ -45,7 +45,7 @@ fun TopBar(
         Platform.DESKTOP -> false
     }
 
-    Surface(elevation = 3.dp) {
+    Surface(shadowElevation = 3.dp) {
 
         TopAppBar(
             title = {
