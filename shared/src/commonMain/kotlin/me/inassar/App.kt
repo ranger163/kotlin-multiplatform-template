@@ -1,8 +1,10 @@
 package me.inassar
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.transitions.FadeTransition
 import cafe.adriel.voyager.transitions.ScaleTransition
@@ -23,11 +25,22 @@ fun App() {
                     title = navigator.lastItem.key,
                     canPop = navigator.canPop,
                     onNavigationBackClick = { navigator.pop() })
-            }) {
+            }) { paddingValues ->
                 when (currentPlatform) {
-                    Platform.IOS -> SlideTransition(navigator)
-                    Platform.ANDROID -> FadeTransition(navigator)
-                    Platform.DESKTOP -> ScaleTransition(navigator)
+                    Platform.IOS -> SlideTransition(
+                        navigator = navigator,
+                        modifier = Modifier.padding(paddingValues)
+                    )
+
+                    Platform.ANDROID -> FadeTransition(
+                        navigator = navigator,
+                        modifier = Modifier.padding(paddingValues)
+                    )
+
+                    Platform.DESKTOP -> ScaleTransition(
+                        navigator = navigator,
+                        modifier = Modifier.padding(paddingValues)
+                    )
                 }
             }
         }
