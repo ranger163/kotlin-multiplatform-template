@@ -1,5 +1,6 @@
 package me.inassar.common.network
 
+import io.github.aakira.napier.Napier
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.DefaultRequest
@@ -37,7 +38,11 @@ fun ktorHttpClient(
             level = LogLevel.ALL
             logger = object : Logger {
                 override fun log(message: String) {
-                    println("Network Logger-> $message")
+                    Napier.log(
+                        priority = io.github.aakira.napier.LogLevel.INFO,
+                        tag = "Network Logger",
+                        message = message
+                    )
                 }
             }
         }
@@ -60,7 +65,11 @@ fun ktorHttpClient(
     install(ResponseObserver) {
         onResponse { response ->
             if (enableNetworkLogs)
-                println("Http status: ${response.status.value}")
+                Napier.log(
+                    priority = io.github.aakira.napier.LogLevel.INFO,
+                    tag = "Http status",
+                    message = response.status.value.toString()
+                )
         }
     }
 
