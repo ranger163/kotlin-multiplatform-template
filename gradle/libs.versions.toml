@@ -23,6 +23,7 @@ coreKtx = "1.12.0"
 kamelImageLoaderVersion = "0.7.3"
 voyagerVersion = "1.0.0-rc07"
 calfAdaptiveUiVersion = "0.2.0"
+napierVersion = "2.6.1"
 
 #Multiplatform
 composeMultiplatformVersion = "1.5.3"
@@ -64,13 +65,11 @@ koinTest = { module = "io.insert-koin:koin-test", version.ref = "koinVersion" }
 koinTestJUnit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinVersion" }
 koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 koinCompose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinAndroidXCompose" }
-
 kamelImageLoader = { module = "media.kamel:kamel-image", version.ref = "kamelImageLoaderVersion" }
-
 voyagerNavigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyagerVersion" }
 voyagerTransitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyagerVersion" }
-
 calfAdaptiveUi = { module = "com.mohamedrejeb.calf:calf-ui", version.ref = "calfAdaptiveUiVersion" }
+napier = { module = "io.github.aakira:napier", version.ref = "napierVersion" }
 
 # Define bundles/groups of libraries
 [bundles]
@@ -86,6 +85,7 @@ multiplatformLibs = [
     "voyagerNavigator",
     "voyagerTransitions",
     "calfAdaptiveUi",
+    "napier"
 ]
 androidLibs = [
     "composeActivity",

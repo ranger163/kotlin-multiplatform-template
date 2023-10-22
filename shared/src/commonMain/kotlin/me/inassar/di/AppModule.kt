@@ -1,5 +1,7 @@
 package me.inassar.di
 
+import io.github.aakira.napier.DebugAntilog
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -11,6 +13,7 @@ import org.koin.dsl.module
  */
 
 fun appModule(enableNetworkLogs: Boolean) = module {
+    Napier.base(DebugAntilog())
     single { ktorHttpClient(get(), enableNetworkLogs = enableNetworkLogs) }
     single { CoroutineScope(Dispatchers.Default + SupervisorJob()) }
 }
