@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.inassar.common.config.Platform
+import me.inassar.platform.ChangeStatusBarColors
 import me.inassar.platform.currentPlatform
 
 /**
@@ -33,8 +34,9 @@ import me.inassar.platform.currentPlatform
 @Composable
 fun TopBar(
     title: String,
-    backgroundColor: Color = Color.Transparent,
-    contentColor: Color = Color.Black,
+    appBarColor: Color = Color.White,
+    statusBarColor: Color = Color.White,
+    contentColor: Color = Color.White,
     canPop: Boolean = false,
     onNavigationBackClick: () -> Unit = {},
     appBarActions: @Composable RowScope.() -> Unit = {}
@@ -44,6 +46,8 @@ fun TopBar(
         Platform.ANDROID -> true
         Platform.DESKTOP -> false
     }
+
+    ChangeStatusBarColors(statusBarColor = statusBarColor)
 
     Surface(shadowElevation = 3.dp) {
 
@@ -60,7 +64,7 @@ fun TopBar(
                 )
             },
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = backgroundColor,
+                containerColor = appBarColor,
                 actionIconContentColor = contentColor,
                 navigationIconContentColor = contentColor,
                 titleContentColor = contentColor
