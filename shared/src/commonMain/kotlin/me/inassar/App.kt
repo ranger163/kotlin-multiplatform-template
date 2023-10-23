@@ -5,6 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.transitions.FadeTransition
 import cafe.adriel.voyager.transitions.ScaleTransition
@@ -20,12 +21,16 @@ fun App() {
         Navigator(
             screen = ProductsScreen
         ) { navigator ->
-            Scaffold(topBar = {
+            Scaffold(
+                topBar = {
                 TopBar(
                     title = navigator.lastItem.key,
                     canPop = navigator.canPop,
+                    appBarColor = Color.Red,
+                    statusBarColor = Color.Red,
                     onNavigationBackClick = { navigator.pop() })
-            }) { paddingValues ->
+            }
+            ) { paddingValues ->
                 when (currentPlatform) {
                     Platform.IOS -> SlideTransition(
                         navigator = navigator,

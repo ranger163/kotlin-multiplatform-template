@@ -8,7 +8,7 @@ import me.inassar.features.feature.presentation.data.UiProducts
  * Created by Ahmed Nassar on 5/27/23.
  */
 fun DomainProducts.toUiProducts() = UiProducts(
-    products = this.products.shuffled().map { domainProduct ->
+    products = this.products.map { domainProduct ->
         UiProduct(
             description = domainProduct.description,
             id = domainProduct.id,
