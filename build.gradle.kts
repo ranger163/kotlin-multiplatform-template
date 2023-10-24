@@ -1,4 +1,14 @@
-@Suppress("DSL_SCOPE_VIOLATION")
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
+buildscript{
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath(libs.classpath.buildKonfig)
+    }
+}
+
 plugins {
     alias(libs.plugins.jvm) apply false
     alias(libs.plugins.multiplatform) apply false

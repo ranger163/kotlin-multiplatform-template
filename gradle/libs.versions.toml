@@ -24,6 +24,7 @@ kamelImageLoaderVersion = "0.7.3"
 voyagerVersion = "1.0.0-rc07"
 calfAdaptiveUiVersion = "0.2.0"
 napierVersion = "2.6.1"
+buildKonfigVersion = "0.14.0"
 
 #Multiplatform
 composeMultiplatformVersion = "1.5.3"
@@ -47,6 +48,8 @@ ktorClientDarwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorV
 
 coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinDateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTime" }
+
+classpath_buildKonfig = { module = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "buildKonfigVersion" }
 
 #Android
 coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -107,3 +110,4 @@ multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotl
 android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
 native_cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlinVersion" }
 plugin_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
+plugin_buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildKonfigVersion" }

@@ -19,7 +19,7 @@ import io.ktor.http.encodedPath
 import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import me.inassar.common.config.BASE_URL
+import me.inassar.TemplateConfig
 
 /**
  * Created by Ahmed Nassar on 5/27/23.
@@ -83,7 +83,7 @@ fun ktorHttpClient(
  * use multiple baseUrls using same client.
  * @param endpoint: pass your endpoint here to be able to perform your request.
  */
-fun HttpRequestBuilder.performCall(endpoint: String, baseUrl: String = BASE_URL) = url {
+fun HttpRequestBuilder.performCall(endpoint: String, baseUrl: String = TemplateConfig.BASE_URL) = url {
     takeFrom(baseUrl)
     encodedPath = endpoint
     headers {
