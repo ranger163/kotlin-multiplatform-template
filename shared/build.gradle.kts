@@ -1,10 +1,15 @@
-@Suppress("DSL_SCOPE_VIOLATION")
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+
+
 plugins {
     alias(libs.plugins.multiplatform)
     id(libs.plugins.native.cocoapods.get().pluginId)
     alias(libs.plugins.android.library)
-    alias (libs.plugins.jetbrains.compose)
-    alias (libs.plugins.plugin.serialization)
+    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.plugin.serialization)
+    id(libs.plugins.plugin.buildKonfig.get().pluginId)
 }
 
 kotlin {
@@ -91,5 +96,77 @@ android {
     }
     kotlin {
         jvmToolchain(17)
+    }
+}
+
+
+buildkonfig {
+    packageName = libs.versions.applicationId.get()
+    objectName = "TemplateConfig" // You can name the config file what you want
+    val baseUrl = "BASE_URL"
+    val flavor = "FLAVOR"
+
+    defaultConfigs {
+        when (project.findProperty("buildFlavor")) {
+            BuildFlavors.DEV.name -> {
+                buildConfigField(
+                    type = STRING,
+                    name = flavor,
+                    value = BuildFlavors.DEV.name,
+                    const = true
+                )
+                buildConfigField(
+                    type = STRING,
+                    name = baseUrl,
+                    value = "https://dummyjson.com/",
+                    const = true
+                )
+            }
+
+            BuildFlavors.QA.name -> {
+                buildConfigField(
+                    type = STRING,
+                    name = flavor,
+                    value = BuildFlavors.QA.name,
+                    const = true
+                )
+                buildConfigField(
+                    type = STRING,
+                    name = baseUrl,
+                    value = "https://dummyjson.com/",
+                    const = true
+                )
+            }
+
+            BuildFlavors.STG.name -> {
+                buildConfigField(
+                    type = STRING,
+                    name = flavor,
+                    value = BuildFlavors.STG.name,
+                    const = true
+                )
+                buildConfigField(
+                    type = STRING,
+                    name = baseUrl,
+                    value = "https://dummyjson.com/",
+                    const = true
+                )
+            }
+
+            BuildFlavors.PROD.name -> {
+                buildConfigField(
+                    type = STRING,
+                    name = flavor,
+                    value = BuildFlavors.PROD.name,
+                    const = true
+                )
+                buildConfigField(
+                    type = STRING,
+                    name = baseUrl,
+                    value = "https://dummyjson.com/",
+                    const = true
+                )
+            }
+        }
     }
 }
