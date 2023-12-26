@@ -1,8 +1,9 @@
 package me.inassar.features.feature.presentation.manipulator
 
 import cafe.adriel.voyager.core.model.StateScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
+import cafe.adriel.voyager.core.model.screenModelScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import me.inassar.common.network.ResponseResource
@@ -14,7 +15,8 @@ import org.koin.core.component.inject
 /**
  * Created by Ahmed Nassar on 5/27/23.
  */
-class FeatureModel : StateScreenModel<FeatureState>(initialState = FeatureState.Loading), KoinComponent {
+class FeatureModel : StateScreenModel<FeatureState>(initialState = FeatureState.Loading),
+    KoinComponent {
     private val repository: FeatureRepository by inject()
 
     fun onEvent(events: FeatureEvents) {
@@ -25,7 +27,7 @@ class FeatureModel : StateScreenModel<FeatureState>(initialState = FeatureState.
 
     private fun getFeatures() {
         // We should specify dispatchers to be on default always, as this is the only dispatcher that supports desktop
-        coroutineScope.launch(Dispatchers.Default) {
+        screenModelScope.launch(Dispatchers.Default) {
             repository.getProducts().collect { result ->
                 when (result) {
                     is ResponseResource.Error ->
